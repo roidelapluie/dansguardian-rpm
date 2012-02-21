@@ -51,8 +51,8 @@ MIME filtering, file extension filtering, POST filtering.
 %build
 
 %configure \
-   --disable-clamav \
-   --disable-clamd \
+   --enable-clamav \
+   --enable-clamd \
    --enable-icap \
    --enable-kavd \
    --enable-commandline \
