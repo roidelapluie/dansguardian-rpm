@@ -30,6 +30,7 @@ BuildRequires: pcre-devel
 BuildRequires: zlib-devel
 BuildRequires: pkgconfig
 BuildRequires: which
+BuildRequires: clamav-devel
 
 Requires(pre):   shadow-utils
 Requires(post):  chkconfig
