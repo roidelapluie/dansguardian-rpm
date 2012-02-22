@@ -1,0 +1,11 @@
+--- dansguardian-2.10.1.1.orig/configure.ac	2012-02-22 08:37:49.616935492 +0100
++++ dansguardian-2.10.1.1/configure.ac	2012-02-22 08:38:30.481938237 +0100
+@@ -333,7 +333,7 @@
+         CLAMAVSHM="!! Not supported on this platform !!"
+ else
+         AC_MSG_RESULT(yes)
+-        PKG_CHECK_MODULES([CLAMAV],[libclamav >= 4])
++        PKG_CHECK_MODULES([CLAMAV],[libclamav >= 0.95])
+ 
+         AC_DEFINE([HAVE_CLAMAV],[],[Define to enable ClamAV content scanner])
+         

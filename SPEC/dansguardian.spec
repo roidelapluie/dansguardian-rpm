@@ -22,6 +22,7 @@ Source3: dansguardian.logrotate
 
 # Fixes some compilation errors with gcc 4.4
 Patch1: dansguardian-gcc44.patch
+Patch2: dansguardian-clamav.patch
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
@@ -48,11 +49,12 @@ MIME filtering, file extension filtering, POST filtering.
 %prep
 %setup
 %patch1 -p1
+autoreconf
 
 %build
 
 %configure \
-   --enable-clamav \
+   --disable-clamav \
    --enable-clamd \
    --enable-icap \
    --enable-kavd \
@@ -140,6 +142,9 @@ fi
 %dir %{_localstatedir}/log/%{name}
 
 %changelog
+* Thu Feb 22 2012 Julien Pivotto <julien@inuits.eu> - 2.10.1.1-2
+- Update for clamav
+
 * Thu Jul 14 2011 Yury V. Zaytsev <yury@shurup.com> - 2.10.1.1-1
 - Synced the SPEC with Fedora Rawhide where appropriate.
 - Updated to release 2.10.1.1.
